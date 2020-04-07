@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: http://ogp.me/ns#">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Velostan'Lib - La location de vélo à Nancy !</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content="Velostan'Lib est un dispositif gratuit de location de vélo installé dans la ville de Nancy. Rendez-vous sur les stations indiquées sur la carte pour réserver votre vélo dès maintenant !">
+    <meta name="keywords" content="location, velo, nancy, velostanlib, reserver">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://velostanlib-p3.webagency-projet.fr" />
+    <meta property="og:title" content="Velostan'Lib - La location de vélo à Nancy" />
+    <meta property="og:description"
+        content="Velostan'Lib est un dispositif gratuit de location de vélo installé dans la ville de Nancy. Rendez-vous sur les stations indiquées sur la carte pour réserver votre vélo dès maintenant !" />
+    <meta property="og:image" content="../images/og-miniature.jpg" />
+    <meta property="og:site_name" content="VelostanLib" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
+</head>
+
+
+<body>
+    <!--                ### SINGLE PAGE APPLICATION SECTION ###              -->
+    <div id="single_page_margin">
+
+        <!--                ### Header Logo Section ###              -->
+
+        <header>
+            <div id="header">
+                <a href="#title-refresh" id="refresh-anchor"></a>
+                <div id="img_bicycle">
+                    <figure>
+                        <img id="image-logo" src="images/bicycle-image.svg" alt="Velostan'Lib">
+                    </figure>
+                </div>
+                <figure>
+                    <img id="logo_site" src="images/logo.png" alt="Logo du site" />
+                </figure>
+                <p id="descr_logo">La location de vélo à Nancy</p>
+            </div>
+        </header>
+
+        <!--                ### Slider Section ###              -->
+        <section id="diapo">
+            <div id="title_slider">
+                <div id="fa-sh-slider">
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <h1>Comment ça marche ?</h1>
+            </div>
+            <div id="diapo_container" class="diapo_active">
+                <div id="caroussel">
+                    <div id="slider">
+                        <div class="loader-div">
+                            <div class="img_loader">
+                                <img src="../images/slider/loader.gif" alt="Loader module">
+                            </div>
+                        </div>
+                        <div class="item_slide">
+                            <div class="item-slider-div">
+                                <div class="slide_img_container" id="step1"></div>
+                                <div class="txt_step">
+                                    <h2 class="step_title">ETAPE 1</h2>
+                                    <p class="description">
+                                        Naviguez sur la carte et sélectionnez la station à laquelle vous souhaitez
+                                        réserver
+                                        un vélo.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_slide">
+                            <div class="item-slider-div">
+                                <div class="slide_img_container" id="step2"></div>
+                                <div class="txt_step">
+                                    <h2 class="step_title">ETAPE 2</h2>
+                                    <p class="description">Les informations de la station apparaissent à droite de la
+                                        carte.
+                                    </p>
+                                    <br>
+                                    <p class="description">Appuyez sur le bouton "Réserver" pour accéder au formulaire.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_slide">
+                            <div class="item-slider-div">
+                                <div class="slide_img_container" id="step3"></div>
+                                <div class="txt_step">
+                                    <h2 class="step_title">ETAPE 3</h2>
+                                    <p class="description">
+                                        Finalisez votre réservation en signant dans le cadre qui s'affiche dans la
+                                        nouvelle fenêtre, puis validez.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_slide">
+                            <div class="item-slider-div">
+                                <div class="slide_img_container" id="step4"></div>
+                                <div class="txt_step">
+                                    <h2 class="step_title" id="end_step">ROULEZ !</h2>
+                                    <p class="description">
+                                        Récupérez votre vélo !</p><br>
+                                    <p class="description">Retrouvez toutes les informations de votre réservation dans
+                                        "Statut de réservation".</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="controls-div">
+                        <div id="controls">
+                            <span class="arrow prev">
+                                <i class="fas fa-angle-left"></i>
+                            </span>
+                            <span id="stop">
+                                <i class="fas fa-pause"></i>
+                            </span>
+                            <span id="play">
+                                <i class="fas fa-play"></i>
+                            </span>
+                            <span class="arrow next">
+                                <i class="fas fa-angle-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--                ### Map Infos Section ###              -->
+        <section>
+            <div id="mapinfos_layer">
+                <div id="carte"></div>
+                <a href="#click-station-display" id="mq-scrolldown-anchor"></a>
+                <div id="infos">
+                    <div id="title-div1">
+                        <h2 class="title">Informations sur la station</h2>
+                    </div>
+                    <div id="markers-color">
+                        <div class="help-row">
+                            <img class="help-markers" src='../images/markers/green-cycling.png' alt="Station verte">
+                            <p class="description">: La station dispose de plusieurs vélos.</p>
+                        </div>
+                        <div class="help-row">
+                            <img class="help-markers" src='../images/markers/orange-cycling.png' alt="Station orange">
+                            <p class="description">: Plus que quelques vélos disponibles.</p>
+                        </div>
+                        <div class="help-row">
+                            <img class="help-markers" src='../images/markers/red-cycling.png' alt="Station rouge">
+                            <p class="description">: Aucun vélo disponible à cette station.</p>
+                        </div>
+                        <div class="help-row">
+                            <img class="help-markers" src='../images/markers/pinclosed.png' alt="Station fermée">
+                            <p class="description">: La station est fermée ou en travaux.</p>
+                        </div>
+                    </div>
+                    <div id="station_infos">
+                        <p id="txt_info">
+
+                        </p>
+                    </div>
+
+                    <!--                ### Form Section ###              -->
+                    <div id="container_form" class="container_hidden">
+                        <div id="title-div2">
+                            <h3 id="form_title">Saisir les informations suivantes</h3>
+                        </div>
+                        <div id="form-div">
+                            <form id="booking1" method="GET">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label for="nom" class="form_style">Nom </label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="nomElt" id="nom">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="prenom" class="form_style">Prénom </label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="prenomElt" id="prenom">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input type="hidden" id="hiddenAddress">
+                                <div id="valid-div">
+                                    <span id="submit-btn">
+                                        <input type="submit" value="Valider" id="validez">
+                                    </span>
+                                </div>
+
+                            </form>
+                            <div id="txt-error">
+                                <p id="error"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!--                ### Footer Section ###              -->
+        <footer>
+            <div id="statut">
+                <a href="#status-anchor" id="scroll-anchor-status"></a>
+                <h2 id="statut_title">Statut de réservation</h2>
+                <div id="footer">
+                    <div id="status-txt-div">
+                        <p id="txt_booking"></p>
+                        <p id="compteur"></p>
+                    </div>
+                    <div id="cancel-btn-div">
+                        <span id="cancel_resa_btn">
+                            <i class="far fa-times-circle"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!--                ### Cancel Confirm Popup ###              -->
+    <div id="container_confirm_cancel">
+        <div id="popup_cancel_contain">
+            <div id="title-div4">
+                <h2 class="title">Annuler votre réservation</h2>
+            </div>
+            <div id="txt_btns_container">
+                <p id="txt_cancel">Vous êtes sur le point d'annuler la réservation en cours.<br>
+                    Confirmez-vous ce choix ?</p>
+                <div id="choice_btns">
+                    <button class="confirm_cancel_btn" id="confirm">Confirmer</button>
+                    <button class="confirm_cancel_btn" id="cancel">Annuler</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--                ### Canvas Section ###              -->
+    <div id="container_canvas" class="canvas_hidden">
+        <a href="#canvas" id="canvas-anchor"></a>
+        <div id="canvas_box">
+            <div id="title-div3">
+                <h2 class="title">Vous y êtes presque !</h2>
+            </div>
+            <div id="canvas-div">
+                <p id="txt_info_canvas">Pour confirmer votre réservation à cette station, <span id="signez">signez dans le cadre
+                    ci-dessous.</span><br>
+                    <br>
+                    <span id="warning_txt">Attention: </span>Une fois la réservation confirmée, vous disposez de <span
+                        id="time">20
+                        minutes</span>
+                    pour récupérer votre vélo.<br> Ne vous inquiétez pas, vous pouvez annuler cette
+                    réservation à tout moment !
+                </p>
+                <div id="div_canvas">
+                    <canvas id="canvas_signature" width="300" height="150"></canvas>
+                    <div id="error_signature">
+                        <p id="err_sign_p"></p>
+                    </div>
+                </div>
+                <div id="btn_canvas">
+                    <span id="cancel-btn">
+                        <i class="far fa-window-close"></i>
+                    </span>
+                    <span id="reset-btn">
+                        <i class="fas fa-redo"></i>
+                    </span>
+                    <span id="confirm-btn">
+                        <i class="far fa-check-circle"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ajax.js"></script>
+    <script src="js/mapControl.js"></script>
+    <script src="js/stations.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/reservation.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/timer.js"></script>
+
+</body>
+
+</html>

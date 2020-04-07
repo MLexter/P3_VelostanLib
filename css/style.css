@@ -1,0 +1,1191 @@
+/* ####### GENERAL ####### */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'barlow_regular';
+    background-color: #e4e4e4;
+}
+
+#single_page_margin {
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 100%;
+}
+
+/* ####### STYLES ####### */
+
+@font-face {
+    font-family: 'kodchasansemibold';
+    src: url('../font/kodchasan-semibold-webfont.woff2') format('woff2'), url('../font/kodchasan-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'barlow_medium';
+    src: url('../font/barlowcondensed-medium-webfont.woff2') format('woff2'), url('../font/barlowcondensed-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'barlow_regular';
+    src: url('../font/barlowcondensed-regular-webfont.woff2') format('woff2'), url('../font/barlowcondensed-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white
+}
+
+h2 {
+    text-align: center;
+}
+
+/* ####### HEADER ####### */
+
+#logo_site {
+    position: relative;
+    left: 7px;
+    max-width: 220px;
+    width: auto;
+}
+
+#img_bicycle {
+    width: 55px;
+    float: left;
+    position: relative;
+    right: 4px;
+    top: 2px;
+}
+
+#descr_logo {
+    font-family: 'kodchasansemibold';
+    font-size: 1.1rem;
+}
+
+.description {
+    position: relative;
+    top: 17px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+header, #diapo_container, #footer, div#infos {
+    background-color: white;
+}
+
+header {
+    width: 100%;
+    min-height: 70px;
+    height: auto;
+}
+
+#header {
+    position: relative;
+    top: 7px;
+    left: 20px;
+    width: 99%;
+    transition-duration: 0.5s;
+}
+
+/* ####### CAROUSSEL ####### */
+
+div.loader-div {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 888;
+    background-color: #e2d9e2;
+    opacity: 1;
+    transition-property: opacity;
+    transition-timing-function: ease-out;
+    transition: 0.8s;
+    transition-delay: 0.5s;
+}
+
+#diapo {
+    background-color: white;
+    height: auto;
+}
+
+#fa-sh-slider {
+    color: white;
+    position: relative;
+    font-size: 2.6rem;
+    float: left;
+    left: 20px;
+    bottom: 6px;
+    transform: rotateZ(0deg);
+    transition-property: rotateZ;
+    transition-timing-function: ease;
+    transition: 0.8s;
+}
+
+#title_slider {
+    width: 100%;
+    text-align: center;
+    background-color: #005d80;
+    cursor: pointer;
+}
+
+#title_slider h1:hover {
+    color: rgb(193, 200, 204);
+    transition: 0.2s;
+}
+
+#diapo_container {
+    display: block;
+    position: relative;
+    max-width: 60%;
+    height: 230px;
+    margin: auto;
+    transition-timing-function: ease;
+    opacity: 1;
+    transition: all 0.8s;
+}
+
+#diapo_container.diapo_hidden {
+    height: 20px;
+    transition-timing-function: ease;
+    transition-duration: 0.8s;
+    opacity: 0;
+}
+
+.divSlider {
+    display: block;
+}
+
+#caroussel {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    top: 13px;
+    overflow: hidden;
+    border-radius: 3px;
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid black;
+    box-shadow: 0px 0px 4px 0px;
+}
+
+#slider {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.item-slider-div {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#slider .item_slide {
+    flex-basis: 25%;
+    width: 25%;
+    flex-shrink: 0;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 20px;
+}
+
+.slide_img_container {
+    float: left;
+    height: 160px;
+    width: 40%;
+    max-width: 180px;
+    border: 2px solid #00000085;
+    border-radius: 15px;
+    box-shadow: 0 0 2px 1px #005d80;
+}
+
+.step_title {
+    font-family: 'barlow_medium';
+    font-size: 2em;
+    position: relative;
+    top: 3px;
+    color: royalblue;
+}
+
+#step1 {
+    background-image: url('../images/slider/step1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#step2 {
+    background-image: url('../images/slider/step2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+#step3 {
+    background-image: url('../images/slider/step3.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+
+#step4 {
+    background-image: url('../images/slider/step4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+.txt_step {
+    margin-left: 30px;
+    width: 65%;
+}
+
+/* ########## BUTTONS CONTROL ########## */
+
+#controls-div {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    position: absolute;
+    bottom: 4px;
+    justify-content: center;
+}
+
+.arrow {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.6em;
+}
+
+#stop:hover, #play:hover {
+    color: #005d80;
+    font-size: 1em;
+    transition-duration: 0.1s;
+}
+
+.prev:hover, .next:hover {
+    font-size: 1.8em;
+    transition-duration: 0.1s;
+    color: #005d80;
+}
+
+#stop {
+    position: relative;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+#play {
+    position: relative;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+#controls {
+    border-radius: 4px;
+    height: auto;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition-property: width;
+    transition-timing-function: ease;
+    transition-duration: 0.4s;
+}
+
+/* ########### MAP ########### */
+
+#mapinfos_layer {
+    position: relative;
+    height: auto;
+    display: flex;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    z-index: 1;
+}
+
+div#carte {
+    width: 70%;
+    transition-property: height;
+    transition-timing-function: ease-in-out;
+    transition: 0.8s all;
+    height: 480px;
+}
+
+.leaflet-popup-content {
+    color: royalblue;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 35px;
+    min-height: 50px;
+    height: auto;
+    font-family: 'barlow_medium';
+    font-size: 1.1rem;
+}
+
+.leaflet-popup {
+    margin-bottom: 30px!important;
+}
+
+.leaflet-popup-tip-container {
+    margin-left: -16%!important;
+    left: 59%!important;
+}
+
+#content-popup-div {
+    text-align: center;
+}
+
+#statut-color {
+    color: #005d80;
+}
+
+.leaflet-marker-icon.float {
+    margin-top: -41px;
+    animation: float 1.2s ease infinite;
+}
+
+@keyframes float {
+    0% {
+        margin-top: -41px;
+    }
+    50% {
+        margin-top: -51px;
+    }
+    100% {
+        margin-top: -41px;
+    }
+}
+
+/* ########## INFO SIDE ########## */
+
+div#infos {
+    width: 40%;
+    border-left: 1px solid;
+    overflow: hidden;
+}
+
+#txt_info {
+    position: relative;
+    text-align: center;
+    font-size: 1.1rem;
+    width: 100%;
+    display: none;
+}
+
+.help-markers {
+    float: left;
+    position: relative;
+    top: 7px;
+    right: 5px;
+}
+
+.help-row {
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+#markers-color {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 86%;
+    margin: 0 auto;
+}
+
+.description-help {
+    width: 100%;
+}
+
+.txt_station {
+    font-family: 'barlow_medium';
+    color: royalblue;
+    font-size: 1.2rem;
+}
+
+.val_station {
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+    font-size: 0.82em;
+    position: relative;
+    top: 7px;
+}
+
+.val_station:after {
+    content: "";
+    display: inline-block;
+    width: 90%;
+    border-bottom: 2px solid #005d80;
+    position: relative;
+    bottom: 9px;
+}
+
+.val_bikes {
+    font-family: 'barlow_medium';
+    font-size: 1.5rem;
+    color: black;
+    position: relative;
+}
+
+#station_infos {
+    display: flex;
+    align-items: center;
+    height: 93%;
+    margin: 10px;
+    transition-property: height;
+    transition-timing-function: ease;
+    transition-duration: 0.8s;
+}
+
+#fa_empty {
+    color: red;
+}
+
+.fa_icon-info {
+    color: indianred;
+    font-size: 1.4em;
+}
+
+.fa-exclamation-circle {
+    color: orange;
+}
+
+#fa_maintenance {
+    color: black;
+}
+
+#dispo {
+    font-size: 1.03em;
+    line-height: 22px;
+    position: relative;
+    bottom: 10px;
+}
+
+.container_active {
+    height: 24%;
+    transition-duration: 0.6s;
+    opacity: 1;
+}
+
+.container_hidden {
+    height: 0;
+    opacity: 0;
+    display: none;
+    transition-property: height;
+    transition-duration: 0.6s;
+    transition-timing-function: ease;
+}
+
+#fa-hand {
+    font-size: 1.2em;
+    color: #005d80;
+    transition-duration: 0.3s;
+}
+
+#reserver {
+    font-family: 'barlow_medium';
+    width: 140px;
+    height: 30px;
+    margin: auto;
+    border-radius: 6px;
+    background-color: #84c5ae;
+    box-shadow: 0 0 3.5px 1px;
+    outline: none;
+    cursor: pointer;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fa-hand:hover {
+    color: white;
+}
+
+#title-div1 {
+    position: relative;
+    background-color: #005d80;
+    color: white;
+    min-height: 30px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+#title-div2 {
+    font-family: 'barlow_regular';
+    text-align: center;
+    font-size: 1.2em;
+    background-color: #03baff;
+    color: white;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-div3 {
+    background-color: #005d80;
+    color: white;
+    min-height: 27px;
+    height: auto;
+}
+
+#title-div4 {
+    background-color: #005d80;
+    color: white;
+    min-height: 27px;
+    height: auto;
+}
+
+.form_style {
+    font-size: 1.1rem;
+}
+
+input#nom, input#prenom {
+    font-family: 'barlow_regular';
+    font-size: 1.1em;
+    height: 25px;
+    margin-left: 5px;
+    width: 100%;
+}
+
+#valid-form {
+    display: flex;
+    justify-content: center;
+}
+
+input#validez {
+    font-family: 'barlow_medium';
+    position: relative;
+    width: 92px;
+    height: 35px;
+    left: 15px;
+    border-radius: 10px;
+    background-color: #84c5ae;
+    color: #005d80;
+    box-shadow: 0 0 4px 1px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+div#txt-error {
+    position: relative;
+    bottom: 3px!important;
+}
+
+#error {
+    color: red;
+    text-align: center;
+    font-size: 1em;
+    position: relative;
+    top: 5px;
+}
+
+#resa_btn {
+    position: relative;
+    left: 75px;
+    width: 70px;
+    height: 30px;
+    border-radius: 6px;
+}
+
+/* ########## CANCEL BOX ########### */
+
+#container_confirm_cancel {
+    position: fixed;
+    background-color: #adabad99;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    transition: all 0.3s;
+    transition-property: opacity;
+    opacity: 0;
+}
+
+#popup_cancel_contain {
+    border: 1px solid;
+    min-width: 30%;
+    min-height: 15%;
+    position: absolute;
+    background-color: white;
+    text-align: center;
+    transition: all 1s;
+    transition-property: opacity;
+    opacity: 1;
+}
+
+#txt_cancel {
+    font-size: 1.1rem;
+}
+
+#txt_btns_container {
+    min-height: 115px;
+    padding: 10px;
+}
+
+#choice_btns {
+    position: relative;
+    top: 10px;
+    display: flex;
+}
+
+.confirm_cancel_btn {
+    font-family: 'barlow_medium';
+    position: relative;
+    width: 100px;
+    height: 25px;
+    margin: auto;
+    border-radius: 6px;
+    background-color: #1b93698a;
+    box-shadow: 0 0 3.5px 1px;
+    padding: 2px 5px;
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #005d80;
+    outline: none;
+    cursor: pointer;
+}
+
+/* ########## CANVAS ########### */
+
+#container_canvas {
+    position: fixed;
+    background-color: #adabad99;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    transition: all 0.3s;
+    transition-property: opacity;
+    opacity: 0;
+}
+
+.canvas_active {
+    opacity: 1;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+}
+
+#canvas-div {
+    margin: 10px;
+}
+
+#canvas_box {
+    border: 1px solid;
+    width: auto;
+    max-width: 700px;
+    height: auto;
+    min-height: 420px;
+    position: absolute;
+    background-color: white;
+    transition-property: width;
+    transition-timing-function: ease;
+    transition-duration: 0.4s;
+}
+
+div#div_canvas {
+    text-align: center;
+    margin-top: 35px;
+}
+
+#canvas_signature {
+    border: 2px solid;
+    background-color: #f4f4f4;
+    transition-property: width;
+    transition-timing-function: ease;
+    transition-duration: 1s;
+}
+
+#canvas_signature:hover {
+    cursor: crosshair;
+}
+
+#txt_info_canvas {
+    position: relative;
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 20px 80px;
+}
+
+#signez {
+    font-family: 'barlow_medium';
+    color: royalblue;
+}
+
+#warning_txt {
+    font-family: 'barlow_medium';
+    font-size: 1.1em;
+}
+
+#time {
+    font-family: 'barlow_medium';
+    color: royalblue;
+}
+
+#form-div {
+    height: 88%;
+    width: 97%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#booking1 {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10px;
+    width: auto;
+}
+
+#error_signature {
+    position: relative;
+    top: 5px;
+    font-size: 1.15em;
+    text-align: center;
+    color: red;
+}
+
+#valid-div {
+    height: 60px;
+    display: flex;
+    width: 45%;
+    align-items: center;
+}
+
+#submit-btn {
+    position: relative;
+    font-size: 1.2em;
+}
+
+#btn_canvas {
+    position: relative;
+    top: 18px;
+    left: 3px;
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#cancel-btn, #reset-btn, #confirm-btn {
+    cursor: pointer;
+}
+#cancel-btn:hover, #reset-btn:hover, #confirm-btn:hover {
+    font-size: 1.92rem;
+    transition-duration: 0.2s;
+}
+#cancel-btn, #reset-btn {
+    margin-right: 25px;
+}
+
+#cancel-btn {
+    color: #005d80;
+}
+
+#cancel-btn:hover {
+    color: red;
+}
+
+#reset-btn:hover {
+    color: #005d80;
+    animation: rotation 1.2s;
+    transition-property: transform;
+    transition-timing-function: ease;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#confirm-btn {
+    color: #005d80;
+}
+
+#confirm-btn:hover {
+    color: green;
+}
+
+/* ########## FOOTER ########### */
+
+div#statut {
+    height: auto;
+    position: static;
+    bottom: 0;
+}
+
+#statut_title {
+    position: relative;
+    background-color: #005d80;
+    color: white;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#footer {
+    width: 100%;
+    display: flex;
+}
+
+#status-txt-div {
+    position: relative;
+    left: 3%;
+    min-height: 90px;
+    width: 92%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#txt_booking {
+    margin: 5px 0 15px;
+    font-size: 1.2rem;
+}
+
+#fa-id, #fa-chrono {
+    position: relative;
+    color: #005d80;
+    font-size: 1.4rem;
+    margin-right: 5px;
+}
+
+.idClient {
+    font-family: 'barlow_medium';
+    color: #005d80;
+}
+
+p#compteur {
+    position: relative;
+    left: 15px;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+#colored-timer {
+    font-family: 'barlow_medium';
+    font-size: 1.4rem;
+    color: royalblue;
+}
+
+#expired_text {
+    font-family: 'barlow_medium';
+    font-size: 1.4em;
+}
+
+div#cancel-btn-div {
+    height: 69%;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    position: absolute;
+    right: 10px;
+}
+
+#cancel_resa_btn {
+    font-size: 2.4em;
+    color: #005d80;
+    cursor: pointer;
+    display: none;
+}
+
+#cancel_resa_btn:hover {
+    color: red;
+    font-size: 2.5em;
+    transition-duration: 0.2s;
+}
+
+/* #################################################### */
+
+/* #################### RESPONSIVE #################### */
+
+/* #################################################### */
+
+@media screen and (min-width: 1000px) {
+    .description {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #diapo_container {
+        max-width: 90%;
+    }
+    #controls {
+        font-size: 0.9em;
+    }
+    #mapinfos_layer {
+        width: 100%;
+        display: inline-grid;
+    }
+    div#carte {
+        width: 100%!important;
+        height: 428px;
+    }
+    .help-row {
+        width: 93%!important;
+    }
+    div#infos {
+        width: 100%!important;
+        border-left: none!important;
+        height: auto;
+    }
+    #station_infos {
+        padding-bottom: 40px!important;
+        justify-content: center;
+    }
+    #container_form {
+        height: auto!important;
+        padding-bottom: 20px!important;
+    }
+    #validez {
+        width: 80px! important;
+        font-size: 1em!important;
+    }
+    footer {
+        position: relative;
+        transition-property: top;
+        transition-timing-function: ease;
+        transition-duration: 1s;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #single_page_margin {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    #markers-color {
+        width: 80%!important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+    header {
+        display: flex;
+        justify-content: center;
+    }
+    #header {
+        width: 285px;
+        align-items: center;
+        left: 7px;
+    }
+    .title, #form-title {
+        height: auto!important;
+    }
+    #descr_logo {
+        font-size: 1rem;
+    }
+    #fa-sh-slider {
+        left: 6px;
+        font-size: 2.2rem;
+        bottom: 4px;
+    }
+    #diapo_container {
+        max-width: 100%
+    }
+    #caroussel {
+        border: none;
+        box-shadow: none;
+        top: -11px;
+        height: 100%;
+        width: 100%;
+    }
+    #item-slider-div {
+        align-items: flex-start;
+    }
+    #step1 {
+        background-image: url('../images/slider/step1-600px.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 4em;
+    }
+    #step2 {
+        background-image: url('../images/slider/step2-600px.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 4em;
+    }
+    #step3 {
+        background-image: url('../images/slider/step3-600px.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 4em;
+    }
+    #step4 {
+        background-image: url('../images/slider/step4-600px.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 4em;
+        transform: rotate(14deg);
+        background-position-x: 15px;
+    }
+    .slide_img_container {
+        height: 90px!important;
+        max-width: 90px!important;
+        border-radius: 50px;
+        position: relative;
+        top: 20%;
+        border: 2px solid #005d80;
+        box-shadow: none;
+        bottom: 0;
+        width: 94%;
+    }
+    .txt_step {
+        margin-left: 10px;
+    }
+    .description {
+        font-size: 1.08rem!important;
+    }
+    #controls-div {
+        bottom: 10px;
+    }
+    #controls {
+        width: 85%;
+    }
+    .txt_station {
+        font-size: 1.1rem!important;
+    }
+    .val_station {
+        font-size: 0.72em!important;
+    }
+    .fa_icon-info {
+        font-size: 1.3em!important;
+    }
+    #val_bikes {
+        font-size: 1.3rem!important;
+    }
+    #station_infos {
+        align-items: flex-start!important;
+        margin-top: 10px!important;
+    }
+    input#nom, input#prenom {
+        width: 100%!important;
+        height: 28px!important;
+    }
+    input#validez {
+        height: 30px!important;
+    }
+    #txt_info_canvas {
+        margin: 20px 10px 5px!important;
+    }
+    .txt_step {
+        font-size: 14px;
+    }
+    #cancel_resa_btn {
+        font-size: 2em!important;
+    }
+    #txt_booking {
+        font-size: 1.1em!important;
+        width: 85%;
+    }
+    #compteur {
+        font-size: 1.1em!important;
+        left: 0!important;
+    }
+    #colored-timer {
+        font-size: 1.2rem!important;
+    }
+    
+}
+
+@media screen and (max-width: 380px) {
+    #descr_logo {
+        position: relative;
+        right: 18px;
+    }
+    #header {
+        left: 0;
+        text-align: center;
+        top: 13px;
+    }
+    #img_bicycle {
+        width: 35px!important;
+        left: 33px!important;
+        top: -7px!important;
+    }
+    #logo_site {
+        width: 160px!important;
+    }
+    #fa-sh-slider {
+        font-size: 2rem;
+        
+    }
+    .slide_img_container {
+        height: 70px!important;
+        max-width: 70px!important;
+    }
+    #step1, #step2, #step3, #step4 {
+        background-size: 2.5em!important;
+    }
+    .description {
+        top: 10px!important;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    #img_bicycle {
+        display: none;
+    }
+    #logo_site {
+        left:0!important;
+    }
+    #descr_logo {
+        right: 0!important;
+    }
+}
